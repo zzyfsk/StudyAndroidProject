@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="欢迎"
+        android:textAlignment="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="2022451585316 张振扬"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:backgroundTint="#709CFF"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img"/>
+
+        <com.zzy.studyproject.CircleProgressView
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            app:backWidth="20dp"
+            app:progColor="#20AEFF"
+            app:backColor="#E6DBDBDB"
+            app:progWidth="20dp"
+            app:progress="50" />
+</LinearLayout>
