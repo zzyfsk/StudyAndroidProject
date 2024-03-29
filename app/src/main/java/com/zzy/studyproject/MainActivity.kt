@@ -1,42 +1,42 @@
 package com.zzy.studyproject
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.ListView
-import android.widget.Toast
+import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.zzy.studyproject.experiment.ni.adapter.PersonAdapter
-import com.zzy.studyproject.experiment.ni.bean.Person
+import com.zzy.studyproject.experiment.ni.ActivityNi
+import com.zzy.studyproject.experiment.san.activity.ActivitySaN
+import com.zzy.studyproject.experiment.yon.activity.ActivityYoN
 
 class MainActivity : AppCompatActivity() {
 
-    private val list = listOf(
-        Person("张三"),
-        Person("李四"),
-        Person("王五"),
-        Person("六六"),
-        Person("七七"),
-        Person("八八"),
-        Person("九九九"),
-        Person("十十十十"),
+    private var button3: Button? = null
+    private var button4: Button? = null
 
-    )
-
-    private var listView: ListView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity2_2)
-        val adapter = PersonAdapter(this, list, {
-            list[it].times++
-        }) {
-            toast(it)
-        }
-        listView = findViewById(R.id.list)
-        listView?.adapter = adapter
-
+        setContentView(R.layout.activity_real_main)
+        initView()
+        setListener()
     }
 
-    private fun MainActivity.toast(string: String) {
-        val toast = Toast.makeText(this, string, Toast.LENGTH_LONG)
-        toast.show()
+    private fun initView(){
+        button3 = findViewById(R.id.main_button_3)
+        button4 = findViewById(R.id.main_button_4)
+    }
+
+    private fun setListener(){
+        button3?.setOnClickListener{
+            val intent = Intent(this, ActivityNi::class.java)
+            intent.putExtra("ActivityMain","From MainActivity")
+            this.startActivity(intent)
+        }
+        button4?.setOnClickListener{
+            val intent = Intent(this, ActivityYoN::class.java)
+            intent.putExtra("name","张振扬")
+            intent.putExtra("id","2022451585316")
+            this.startActivity(intent)
+        }
     }
 }

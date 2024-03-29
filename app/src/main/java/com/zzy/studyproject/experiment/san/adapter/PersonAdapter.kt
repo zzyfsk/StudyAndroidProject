@@ -1,4 +1,4 @@
-package com.zzy.studyproject.experiment.ni.adapter
+package com.zzy.studyproject.experiment.san.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
 import com.zzy.studyproject.R
-import com.zzy.studyproject.experiment.ni.bean.Person
+import com.zzy.studyproject.experiment.san.bean.Person
 import java.lang.RuntimeException
 
 class PersonAdapter(
@@ -30,7 +30,7 @@ class PersonAdapter(
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View {
         val person = getItem(position)
         val viewContent =
-            LayoutInflater.from(context).inflate(R.layout.activity2item, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.activity3item, parent, false)
         val itemName = viewContent?.findViewById<TextView>(R.id.item_text)
         val button = viewContent?.findViewById<Button>(R.id.item_button)
         itemName?.text = person.toString()

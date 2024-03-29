@@ -21,6 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".experiment.ni.ActivityNi"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".experiment.san.activity.ActivitySaN"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".experiment.yon.activity.ActivityYoN"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
