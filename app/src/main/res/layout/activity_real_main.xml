@@ -16,4 +16,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="去实验四" />
+
+    <Button
+        android:id="@+id/main_button_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去实验五" />
+
+    <Button
+        android:id="@+id/main_button_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去实验六" />
 </LinearLayout>
