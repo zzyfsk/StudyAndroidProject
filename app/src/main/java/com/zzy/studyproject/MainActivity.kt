@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.zzy.studyproject.experiment.go.activity.ActivityGo
+import com.zzy.studyproject.experiment.nana.ActivityNaNa
 import com.zzy.studyproject.experiment.roku.activity.ActivityRoKu
 import com.zzy.studyproject.experiment.san.activity.ActivitySaN
 import com.zzy.studyproject.experiment.yon.activity.ActivityYoN
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private var button4: Button? = null
     private var button5: Button? = null
     private var button6: Button? = null
-
+    private var button7: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_real_main)
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         button4 = findViewById(R.id.main_button_4)
         button5 = findViewById(R.id.main_button_5)
         button6 = findViewById(R.id.main_button_6)
+        button7 = findViewById(R.id.main_button_7)
     }
 
     private fun setListener(){
@@ -51,6 +53,10 @@ class MainActivity : AppCompatActivity() {
         }
         button6?.setOnClickListener{
             val intent = Intent(this, ActivityRoKu::class.java)
+            this.startActivity(intent)
+        }
+        button7?.setOnClickListener{
+            val intent = Intent(this, ActivityNaNa::class.java)
             this.startActivity(intent)
         }
     }

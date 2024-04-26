@@ -41,6 +41,11 @@
             android:name=".experiment.roku.activity.ActivityRoKu"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".experiment.nana.ActivityNaNa"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

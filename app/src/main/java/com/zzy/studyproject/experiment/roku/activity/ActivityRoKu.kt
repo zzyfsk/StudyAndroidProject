@@ -24,7 +24,6 @@ class ActivityRoKu:AppCompatActivity() {
     private lateinit var buttonXMLWrite:Button
     private lateinit var buttonRead:Button
     private lateinit var buttonWrite:Button
-    private lateinit var buttonBack:Button
 
     private lateinit var sharedPreferences: SharedPreferences
 
