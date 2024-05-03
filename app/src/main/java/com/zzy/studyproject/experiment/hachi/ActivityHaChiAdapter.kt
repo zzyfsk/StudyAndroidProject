@@ -1,26 +1,20 @@
-package com.zzy.studyproject.experiment.nana
+package com.zzy.studyproject.experiment.hachi
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.Button
 import android.widget.TextView
 import com.zzy.studyproject.R
-import com.zzy.studyproject.experiment.roku.bean.Student
-import com.zzy.studyproject.experiment.san.bean.Person
-import java.lang.RuntimeException
 
-class EditAdapter(
-    private val context: Context, private val objects: List<Student>, val add: (Int) -> Unit,
-    val toast: (String) -> Unit
-) : BaseAdapter() {
+class ActivityHaChiAdapter(
+    private val context: Context, private val objects: List<Contacts>) : BaseAdapter() {
     override fun getCount(): Int {
         return objects.size
     }
 
-    override fun getItem(p0: Int): Student {
+    override fun getItem(p0: Int): Contacts {
         return objects[p0]
     }
 
@@ -32,7 +26,7 @@ class EditAdapter(
         val viewContent =
             LayoutInflater.from(context).inflate(R.layout.item7, parent, false)
         val itemName = viewContent?.findViewById<TextView>(R.id.item7_name)
-        itemName?.text = getItem(position).toString()
+        itemName?.text = "${getItem(position).name} ${getItem(position).number}"
         return viewContent ?: throw RuntimeException("空view")
     }
 
