@@ -26,7 +26,8 @@ import androidx.core.content.ContextCompat;
 
 public class CircleProgressView extends View {
 
-    private Paint mBackPaint, mProgPaint;   // 绘制画笔
+    private final Paint mBackPaint;
+    private final Paint mProgPaint;   // 绘制画笔
     private RectF mRectF;       // 绘制区域
     private int[] mColorArray;  // 圆环渐变色
     private int mProgress;      // 圆环进度(0-100)
@@ -126,12 +127,9 @@ public class CircleProgressView extends View {
         if (animTime <= 0) setProgress(progress);
         else {
             ValueAnimator animator = ValueAnimator.ofInt(mProgress, progress);
-            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    mProgress = (int) animation.getAnimatedValue();
-                    invalidate();
-                }
+            animator.addUpdateListener(animation -> {
+                mProgress = (int) animation.getAnimatedValue();
+                invalidate();
             });
             animator.setInterpolator(new OvershootInterpolator());
             animator.setDuration(animTime);

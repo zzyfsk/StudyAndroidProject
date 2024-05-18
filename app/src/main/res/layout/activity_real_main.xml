@@ -45,4 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="去实验九" />
+    <Button
+        android:id="@+id/main_button_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去实验十" />
 </LinearLayout>

@@ -26,7 +26,6 @@ class ActivityKYu :AppCompatActivity(){
         setContentView(R.layout.activity9)
 
         timeTextView = findViewById(R.id.activity9_text_1)
-        timeTextView.text = "5"
 
         val filter = IntentFilter(CurrentTimeService.ACTION_TIME)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.zzy.studyproject.experiment.go.activity.ActivityGo
 import com.zzy.studyproject.experiment.hachi.ActivityHaChi
+import com.zzy.studyproject.experiment.ju.ActivityJu
 import com.zzy.studyproject.experiment.kyu.ActivityKYu
 import com.zzy.studyproject.experiment.nana.ActivityNaNa
 import com.zzy.studyproject.experiment.roku.activity.ActivityRoKu
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var button7: Button? = null
     private var button8: Button? = null
     private var button9: Button? = null
+    private var button10: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         button7 = findViewById(R.id.main_button_7)
         button8 = findViewById(R.id.main_button_8)
         button9 = findViewById(R.id.main_button_9)
+        button10 = findViewById(R.id.main_button_10)
     }
 
     private fun setListener(){
@@ -72,6 +75,10 @@ class MainActivity : AppCompatActivity() {
         }
         button9?.setOnClickListener {
             val intent = Intent(this,ActivityKYu::class.java)
+            this.startActivity(intent)
+        }
+        button10?.setOnClickListener {
+            val intent = Intent(this,ActivityJu::class.java)
             this.startActivity(intent)
         }
     }
