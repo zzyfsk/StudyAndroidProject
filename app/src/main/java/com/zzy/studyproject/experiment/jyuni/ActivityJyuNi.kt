@@ -10,9 +10,11 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.ComposeView
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.zzy.studyproject.R
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -29,7 +31,7 @@ class ActivityJyuNi:AppCompatActivity() {
             Column {
                 Row {
                     Button(onClick = {
-                        coroutineScope.launch(Dispatchers.IO){
+                        lifecycleScope.async(){
                             viewModel.toggleConnection()
                         }
                     }) {

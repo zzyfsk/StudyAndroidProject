@@ -56,18 +56,15 @@ class JyuNiViewModel : ViewModel() {
     }
 
     private suspend fun readMessage() {
-        Log.d("TAG", "readMessage: ")
         withContext(Dispatchers.IO) {
             while (true) {
-                Log.d(TAG, "readMessage: ")
                 if (input?.readLine().also {
-                        if (it != null) {
+                        if (!it.isNullOrEmpty()) {
                             textList.add(it)
                         }
                     } == null) {
-                    continue
+                    break
                 }
-                Log.e(TAG, "readMessage: ${textList.size}")
             }
         }
     }

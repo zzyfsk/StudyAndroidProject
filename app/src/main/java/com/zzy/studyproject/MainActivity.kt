@@ -4,11 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.ui.platform.ComposeView
 import com.zzy.studyproject.experiment.go.activity.ActivityGo
 import com.zzy.studyproject.experiment.hachi.ActivityHaChi
 import com.zzy.studyproject.experiment.ju.ActivityJu
 import com.zzy.studyproject.experiment.juichi.ActivityJuIChi
 import com.zzy.studyproject.experiment.jyuni.ActivityJyuNi
+import com.zzy.studyproject.experiment.jyusan.ActivityJyuSan
 import com.zzy.studyproject.experiment.kyu.ActivityKYu
 import com.zzy.studyproject.experiment.nana.ActivityNaNa
 import com.zzy.studyproject.experiment.roku.activity.ActivityRoKu
@@ -28,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private var button10: Button? = null
     private var button11: Button? = null
     private var button12: Button? = null
+    private var composeView: ComposeView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +42,14 @@ class MainActivity : AppCompatActivity() {
         setListener()
         write()
         read()
+        composeView?.setContent {
+            val intent13 = Intent(this,ActivityJyuSan::class.java)
+            Column {
+                Button(onClick = { startActivity(intent13) }) {
+                    Text(text = "去实验十三")
+                }
+            }
+        }
     }
 
     private fun initView(){
@@ -49,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         button10 = findViewById(R.id.main_button_10)
         button11 = findViewById(R.id.main_button_11)
         button12 = findViewById(R.id.main_button_12)
+        composeView = findViewById(R.id.activity_real_main_compose)
     }
 
     private fun setListener(){
