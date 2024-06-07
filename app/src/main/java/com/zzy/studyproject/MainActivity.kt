@@ -14,6 +14,7 @@ import com.zzy.studyproject.experiment.ju.ActivityJu
 import com.zzy.studyproject.experiment.juichi.ActivityJuIChi
 import com.zzy.studyproject.experiment.jyuni.ActivityJyuNi
 import com.zzy.studyproject.experiment.jyusan.ActivityJyuSan
+import com.zzy.studyproject.experiment.jyuyon.ActivityJyuYon
 import com.zzy.studyproject.experiment.kyu.ActivityKYu
 import com.zzy.studyproject.experiment.nana.ActivityNaNa
 import com.zzy.studyproject.experiment.roku.activity.ActivityRoKu
@@ -44,9 +45,13 @@ class MainActivity : AppCompatActivity() {
         read()
         composeView?.setContent {
             val intent13 = Intent(this,ActivityJyuSan::class.java)
+            val intent14 = Intent(this,ActivityJyuYon::class.java)
             Column {
                 Button(onClick = { startActivity(intent13) }) {
                     Text(text = "去实验十三")
+                }
+                Button(onClick = { startActivity(intent14) }) {
+                    Text(text = "去实验十四")
                 }
             }
         }

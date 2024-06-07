@@ -73,6 +73,10 @@
             android:name=".experiment.jyusan.ActivityJyuSan"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".experiment.jyuyon.ActivityJyuYon"
+            android:exported="true">
+        </activity>
         <service android:name=".experiment.kyu.CurrentTimeService" />
     </application>
 
